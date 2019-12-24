@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://www.cnblogs.com/biehongli/p/6025954.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+    <title>PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园</title>
+<meta property="og:description" content="1：入门级使用PowerDesigner软件创建数据库（直接上图怎么创建，其他的概念知识可自行学习） 我的PowerDesigner版本是16.5的，如若版本不一样，请自行参考学习即可。（打开软件即是">
+    <link type="text/css" rel="stylesheet" href="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/bundle-iMetro_HD.css">
+<link type="text/css" rel="stylesheet" href="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/297404.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/bundle-iMetro_HD-mobile.css">
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/biehongli/rss">
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/biehongli/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/biehongli/wlwmanifest.xml">
+    <script src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/amp4ads-host-v0.js"></script><script src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/pubads_impl_rendering_2019040101.js"></script><script async="" src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/analytics.js"></script><script src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=297404;var currentBlogApp='biehongli',cb_enable_mathjax=true;var isLogined=false;</script>
+    <script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: { 
+            equationNumbers: { autoNumber: ['AMS'], useLabelIds: true }, 
+            extensions: ['extpfeil.js'],
+            Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script><script src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/MathJax.js"></script>
+<script src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/blog-common.js" type="text/javascript"></script>
+<link rel="preload" href="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/integrator.js" as="script"><script type="text/javascript" src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/integrator.js"></script><script src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/pubads_impl_2019040101.js" async=""></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<a name="top"></a>
+
+<!--PageBeginHtml Block Begin-->
+<a class="git-link" href="https://github.com/MRbie"></a>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+
+</head>
+<body>
+
+</body>
+-->
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/biehongli/"><img id="blogLogo" src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/biehongli/">---&gt;别先生&lt;---</a></h1>
+<h2></h2><h6 style="text-decoration:line-through;">
+代码改变世界，你改变代码===&gt;你改变世界。老铁，没毛病。Date：2017/11/22
+</h6>
+<h1 style="font-size:24px;">
+爱生活，爱工作。
+</h1>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/biehongli/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%88%AB%E5%85%88%E7%94%9F">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/biehongli/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/biehongli/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 317&nbsp; </span>
+<span id="stats_article_count">文章 - 4&nbsp; </span>
+<span id="stats-comment_count">评论 - 303</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/biehongli/p/6025954.html">PowerDesigner最基础的使用方法入门学习</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body" deep="8"><p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">1：入门级使用PowerDesigner软件创建数据库（直接上图怎么创建，其他的概念知识可自行学习）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">我的PowerDesigner版本是16.5的，如若版本不一样，请自行参考学习即可。（打开软件即是此页面，可选择Create Model,也可以选择Do&nbsp; Not&nbsp; Show page Again,自行在打开软件后创建也可以！完全看个人的喜好，在此我在后面的学习中不在显示此页面。）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103095713783-167662884.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">2：首先创建概念数据模型，如图所示（后面介绍一些比如物理数据模型等等，由于此软件全部是英文的，所以作为一个chinese不是很懂的，耐心的多使用几次就好了。）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><span style="color: #ff0000;">请自行脑补</span></span></strong></span></p>
+<div class="content-list-text">
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">概念模型(CDM Conceptual Data Model)</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">物理模型（PDM,Physical Data Model）</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">面向对象的模型（OOM Objcet Oriented Model）</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">业务模型（BPM Business Process Model）</span></strong></span></p>
+</div>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103100038752-189906645.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">3:点击上面的ok,即可出现下图左边的概念模型1,自己起得概念模型的名字，使用最多的就是如图所示的那两个<span style="color: #ff0000;">Entity(实体),Relationship(关系)</span></span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103100303236-638510913.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">4:选中右边框中Entity这个功能，即可出现下面这个方框，(需要注意的是书写name的时候，code自行补全，name可以是英文的也可以是中文的，但是code必须是英文的。)</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103100735377-1271949094.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">5:General中的name和code填好后，就可以点击Attributes（属性）来设置name（名字）,code(在数据库中的字段名)，Data&nbsp; Type(数据类型) ，length(数据类型的长度)</span></strong></span></p>
+<div class="content-list-text">
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">请自行脑补 </span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">Name: 实体名字一般为中文如论坛用户</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">Code: 实体代号,一般用英文如XXXUser</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">Comment:注释对此实体详细说明。</span></strong></span></p>
+<div class="content-list-text">
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">Code属性代号一般用英文UID DataType</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">Domain域表示属性取值范围如可以创建10个字符的地址域&nbsp;</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">M:Mandatory强制属性，表示该属性必填。不能为空</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">P:Primary Identifer是否是主标识符，表示实体店唯一标识符</span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">D:Displayed显示出来，默认全部勾选</span></strong></span></p>
+</div>
+</div>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103101508736-1342423896.png" alt=""></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">（在此上图说明name和code的起名方法）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103102802065-1176624293.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">6：设置的主标识符可以在Identifiers(标识符)这个模块删除or添加主标识符。</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103103457408-714895456.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">7：创建好概念数据模型如图所示，但是创建好的字体很小，读者可以按着ctrl键同时滑动鼠标的可滑动按钮即可放大缩写字体，同时也可以看到主标识符有一个*号的标志，同时也显示出来了，name,Data type和length这些可见的属性</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103103818705-47629867.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">8：同理创建一个班级的实体（需要特别注意的是，点击完右边功能的按钮后需要点击鼠标指针状态的按钮或者右击鼠标即可，不然很容易乱操作，这点注意一下就可以了），然后使用Relationship（关系）这个按钮可以连接学生和班级之间的关系，发生一对多（班级对学生）或者多对一（学生对班级）的关系。如图所示</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103112344424-1236513954.png" alt=""><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（需要注意的是点击Relationship这个按钮，就把班级和学生联系起来了，就是一条线，然后双击这条线进行编辑，在General这块起name和code）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103112620768-942617.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（上面的name和code起好后就可以在Cardinalities这块查看班级和学生的关系，可以看到班级的一端是一条线，学生的一端是三条，代表班级对学生是一对多的关系即one对many的关系，点击应用，然后确定即可）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103112628393-680274585.png" alt=""></p>
+<p>&nbsp;</p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">9：一对多和多对一练习完还有多对多的练习，如下图操作所示（当你操作几遍之后发现自己已经非常熟练的使用此工具，是不是感觉棒棒哒），老师实体和上面介绍的一样，自己将name，data type等等修改成自己需要的即可，满足项目开发需求即可。（comment是解释说明，自己可以写相关的介绍和说明）</span></strong></span></p>
+<p>&nbsp;<img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103135441049-1274868556.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（多对多需要注意的时自己可以手动点击按钮将关系调整称为多对多的关系many对many的关系，然后点击应用和确定即可）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103135447940-93127078.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">综上即可完成最简单的学生，班级，教师这种概念数据模型的设计，需要考虑数据的类型和主标识码，是否为空。关系是一对一还是一对多还是多对多的关系，自己需要先规划好再设计，然后就ok了。</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103135455018-1604681063.png" alt=""></p>
+<hr><hr>
+<p>&nbsp;<span style="color: #ff0000;"><strong><span style="font-size: 18px;">上面是概念数据模型，下面介绍一下物理数据模型，以后经常使用的就是物理数据模型</span></strong></span></p>
+<hr>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">1：打开PowerDesigner，然后点击File--&gt;New&nbsp; Model然后选择如下图所示的物理数据模型</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（物理数据模型的名字自己起，然后选择自己所使用的数据库即可）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103141228861-2112033381.png" alt=""></span></strong></span></p>
+<p><span style="color: #ff0000;"><strong><span style="font-size: 18px;">(创建好主页面如图所示，但是右边的按钮和概念模型略有差别，物理模型最常用的三个是table(表)，view（视图），reference(关系))；</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103141530877-1712589721.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（鼠标先点击右边table这个按钮然后在新建的物理模型点一下，即可新建一个表，然后双击新建如下图所示，在General的name和code填上自己需要的，点击应用即可），如下图：</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103142538471-827865875.png" alt=""></span></strong></span></p>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">（然后点击Columns,如下图设置，灰常简单，需要注意的就是P（primary主键） , F （foreign key外键） , M（mandatory强制性的，代表不可为空）&nbsp; 这三个，多看几遍理解其意思。）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103142834440-2044159209.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（在此设置学号的自增（MYSQL里面的自增是这个AUTO_INCREMENT），班级编号同理，不作多啰嗦！）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103145126877-204502816.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（在下面的这个点上对号即可，就设置好了自增）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103145132736-1257882099.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（全部完成后如下图所示。）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103143351830-410254423.png" alt=""></span></strong></span></p>
+<p><span style="color: #000000;"><strong><span style="font-size: 16px;">&nbsp;（班级物理模型同理如下图所示创建即可）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103144950815-626106079.png" alt=""></p>
+<p>&nbsp;</p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103145023096-191354408.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（完成后如下图所示）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103145411377-1033326438.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">上面的设置好如上图所示，然后下面是关键的地方，点击右边按钮Reference这个按钮，因为是班级对学生是一对多的，所以鼠标从学生拉到班级如下图所示，学生表将发生变化，学生表里面增加了一行，这行是班级表的主键作为学生表的外键，将班级表和学生表联系起来。（仔细观察即可看到区别。）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103145853674-754983987.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（做完上面的操作，就可以双击中间的一条线，显示如下图，修改name和code即可）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103150352158-670489735.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">(但是需要注意的是，修改完毕后显示的结果却如下图所示，并没有办法直接像概念模型那样，修改过后显示在中间的那条线上面，读者自己明白即可，自己也可以使用其他按钮自行添加注释也可。如Text这个按钮也可以添加，方便阅读)</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103150511393-1392008070.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（学习了多对一或者一对多的关系，接下来学习多对对的关系，同理自己建好老师表，这里不在叙述，记得老师编号自增，建好如下图所示）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103152203330-852003505.png" alt=""></span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（下面是多对多关系的关键，由于物理模型多对多的关系需要一个中间表来连接，如下图，只设置一个字段，主键，自增）</span> </strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103152801002-1365030233.png" alt=""></p>
+<p><strong><span style="font-size: 18px; color: #0000ff;">（点击应用，然后设置Columns，只添加一个字段）</span></strong></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103152809065-2090925998.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（这是设置字段递增，前面已经叙述过好几次）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103152814580-1634737509.png" alt=""></p>
+<p><strong><span style="font-size: 18px; color: #0000ff;">（设置好后如下图所示）（需要注意的是有箭头的一方是一，无箭头的一方是多，即一对多的多对一的关系需要搞清楚，学生也可以有很多老师，老师也可以有很多学生，所以学生和老师都可以是主体，即男/女猪脚）；</span></strong></p>
+<p><strong><span style="font-size: 18px; color: #0000ff;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103153740940-1518391825.png" alt=""></span></strong></p>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">（可以看到添加关系以后学生和教师的关系表前后发生的变化）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103153441268-1062783668.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（详细的知识或者和数据库相关的请自行脑补，这里直介绍如何很好的使用PowerDesigner这个工具）</span></strong></span></p>
+<hr><hr>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">下面将介绍概念模型转为物理模型和物理模型转换为概念模型</span></strong></span></p>
+<hr>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">1：如下图所示先打开概念模型图，然后点击Tool,如下图所示</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103155626565-7652402.png" alt=""></span></strong></span></p>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">（点开的页面如下所示，name和code我已经从概念模型1改成物理模型1了）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103155632908-972654048.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">(完成后如下图所示，将自行打开修改的物理模型，需要注意的是这些表的数据类型已经自行改变了，而且中间表出现两个主键，即双主键，）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103155643158-1611039554.png" alt=""></p>
+<p>&nbsp;</p>
+<hr><hr>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">（在这里脑补一下，由于我点来点去竟然把右侧的ToolBox点击没了，这里说一下，就是在view菜单的下面ToolBox，点击打开即可）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（由于我正在使用着电脑就自动关机了，我也是醉了，重新打开PowerDesigner如下图，自己右击open即可。）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103163634971-1510179579.png" alt=""></p>
+<hr><hr>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">1：上面介绍了概念模型转物理模型，下面介绍一下物理模型转概念模型（如下图点击操作即可）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103164337721-2055547375.png" alt=""></span></strong></span></p>
+<p>&nbsp;<span style="color: #0000ff;"><strong><span style="font-size: 18px;">（然后出现如下图所示界面，然后将物理修改为概念 ，点击应用确和认即可）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103164450736-1093471118.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（点击确认后将自行打开如下图所示的页面，自己观察有何变化，如果转换为oracle的，数据类型会发生变化，比如Varchar2等等）；</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103164344627-17482867.png" alt=""></p>
+<hr>
+<p>&nbsp;</p>
+<hr>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">1：下面介绍一下物理模型导出SQL语句（点击Database按钮的Generate Database或者按ctrl+G）</span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103171001174-1121493198.png" alt=""></span></strong></span></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">(打开之后如图所示，修改好存在sql语句的位置和生成文件的名称即可)</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103171008377-2114364808.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（在Selection中选择需要导出的表，然后点击应用和确认即可）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103171013924-246974111.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（完成以后出现如下图所示，可以点击Edit或者close按钮）</span></strong></span></p>
+<p><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/1002211-20161103171020768-1223717786.png" alt=""></p>
+<p><span style="color: #0000ff;"><strong><span style="font-size: 18px;">（自此，就完成了导出sql语句，就可以到自己指定的位置查看导出的sql语句了；）</span></strong></span></p>
+<blockquote>
+<p><span style="color: #339966;"><strong><span style="font-size: 18px;">PowerDesigner在以后在项目开发过程中用来做需求分析和数据库的设计非常的方便和快捷</span></strong></span></p>
+</blockquote>
+<hr><hr>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/biehongli/category/904104.html" target="_blank">PowerDesigner</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6025954,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;04cc825a-0058-e611-9fc1-ac853d9f53cc&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/biehongli/" target="_blank"><img src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/20160802092308.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/biehongli/">别先生</a><br>
+            <a href="http://home.cnblogs.com/u/biehongli/followees">关注 - 39</a><br>
+            <a href="http://home.cnblogs.com/u/biehongli/followers">粉丝 - 692</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;04cc825a-0058-e611-9fc1-ac853d9f53cc&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6025954,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">55</span>
+    </div>
+    <div class="buryit" onclick="votePost(6025954,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/biehongli/p/5990221.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/biehongli/p/5990221.html" title="发布于2016-10-23 16:19">java中集合类中Collection接口中的Map接口的常用方法熟悉</a><br><a href="https://www.cnblogs.com/biehongli/p/6032905.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/biehongli/p/6032905.html" title="发布于2016-11-05 12:52">SQLyog图形化l数据库的操作和学习</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-11-03 16:02</span> <a href="https://www.cnblogs.com/biehongli/">别先生</a> 阅读(<span id="post_view_count">243991</span>) 评论(<span id="post_comment_count">29</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6025954" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/biehongli/p/6025954.html#" onclick="AddToWz(6025954);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=297404,cb_entryId=6025954,cb_blogApp=currentBlogApp,cb_blogUserGuid='04cc825a-0058-e611-9fc1-ac853d9f53cc',cb_entryCreatedDate='2016/11/3 16:02:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<br>
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div>	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3673466" class="layer">#1楼</a><a name="3673466" id="comment_anchor_3673466"></a>  <span class="comment_date">2017-04-21 12:59</span> <a id="a_comment_author_3673466" href="https://www.cnblogs.com/fujx/" target="_blank">6筒开杠</a> <a href="http://msg.cnblogs.com/send/6%E7%AD%92%E5%BC%80%E6%9D%A0" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3673466" class="blog_comment_body">很清晰明了,理解</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3673466,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3673466,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3673466_avatar" style="display:none;">http://pic.cnblogs.com/face/1139741/20170421172533.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3727818" class="layer">#2楼</a><a name="3727818" id="comment_anchor_3727818"></a>  <span class="comment_date">2017-07-03 22:45</span> <a id="a_comment_author_3727818" href="https://www.cnblogs.com/haof3344/" target="_blank">Mr.H</a> <a href="http://msg.cnblogs.com/send/Mr.H" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3727818" class="blog_comment_body">写的很好！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3727818,&#39;Digg&#39;,this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3727818,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3727818_avatar" style="display:none;">http://pic.cnblogs.com/face/u334234.png?id=25224747</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3778866" class="layer">#3楼</a><a name="3778866" id="comment_anchor_3778866"></a>  <span class="comment_date">2017-09-08 18:28</span> <a id="a_comment_author_3778866" href="https://www.cnblogs.com/ClearAndExit/" target="_blank">把杯子倒进水里面</a> <a href="http://msg.cnblogs.com/send/%E6%8A%8A%E6%9D%AF%E5%AD%90%E5%80%92%E8%BF%9B%E6%B0%B4%E9%87%8C%E9%9D%A2" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3778866" class="blog_comment_body">刚刚把软件汉化完成，赶紧来看教程。。。。。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3778866,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3778866,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3778866_avatar" style="display:none;">http://pic.cnblogs.com/face/1154409/20170426152708.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3789282" class="layer">#4楼</a><a name="3789282" id="comment_anchor_3789282"></a>  <span class="comment_date">2017-09-19 10:44</span> <a id="a_comment_author_3789282" href="http://home.cnblogs.com/u/873627/" target="_blank">别哥</a> <a href="http://msg.cnblogs.com/send/%E5%88%AB%E5%93%A5" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3789282" class="blog_comment_body">你也姓别</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3789282,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3789282,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3807188" class="layer">#5楼</a><a name="3807188" id="comment_anchor_3807188"></a>  <span class="comment_date">2017-10-11 11:31</span> <a id="a_comment_author_3807188" href="https://www.cnblogs.com/tpwong/" target="_blank">tp.wong</a> <a href="http://msg.cnblogs.com/send/tp.wong" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3807188" class="blog_comment_body">来晚了Orz</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3807188,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3807188,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3809703" class="layer">#6楼</a><a name="3809703" id="comment_anchor_3809703"></a>  <span class="comment_date">2017-10-13 16:04</span> <a id="a_comment_author_3809703" href="http://home.cnblogs.com/u/1256792/" target="_blank">小唐Tom</a> <a href="http://msg.cnblogs.com/send/%E5%B0%8F%E5%94%90Tom" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3809703" class="blog_comment_body">不错，写得很详细~~</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3809703,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3809703,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3859439" class="layer">#7楼</a><a name="3859439" id="comment_anchor_3859439"></a>  <span class="comment_date">2017-12-06 17:47</span> <a id="a_comment_author_3859439" href="https://www.cnblogs.com/zbqldyj/" target="_blank">代码小兵的成长</a> <a href="http://msg.cnblogs.com/send/%E4%BB%A3%E7%A0%81%E5%B0%8F%E5%85%B5%E7%9A%84%E6%88%90%E9%95%BF" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3859439" class="blog_comment_body">良心文章， 好评</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3859439,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3859439,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3863262" class="layer">#8楼</a><a name="3863262" id="comment_anchor_3863262"></a>  <span class="comment_date">2017-12-11 21:04</span> <a id="a_comment_author_3863262" href="https://www.cnblogs.com/jenny-jreborn/" target="_blank">Jscream</a> <a href="http://msg.cnblogs.com/send/Jscream" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3863262" class="blog_comment_body">很不错的文章</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3863262,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3863262,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3863262_avatar" style="display:none;">http://pic.cnblogs.com/face/919855/20160323112908.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3870710" class="layer">#9楼</a><a name="3870710" id="comment_anchor_3870710"></a>  <span class="comment_date">2017-12-21 10:01</span> <a id="a_comment_author_3870710" href="http://home.cnblogs.com/u/1303744/" target="_blank">FightTheDepression</a> <a href="http://msg.cnblogs.com/send/FightTheDepression" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3870710" class="blog_comment_body">写得很详细，学习了</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3870710,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3870710,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3871198" class="layer">#10楼</a><a name="3871198" id="comment_anchor_3871198"></a>  <span class="comment_date">2017-12-21 17:38</span> <a id="a_comment_author_3871198" href="https://www.cnblogs.com/lightsrs/" target="_blank">蜗牛的古董</a> <a href="http://msg.cnblogs.com/send/%E8%9C%97%E7%89%9B%E7%9A%84%E5%8F%A4%E8%91%A3" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3871198" class="blog_comment_body">我竟然看完了！ 可以，首先吸引我的竟是那飘下的雪花（冬天了嘛）。提一点，preview可以解析出表sql语句</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3871198,&#39;Digg&#39;,this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3871198,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3871198_avatar" style="display:none;">http://pic.cnblogs.com/face/1258197/20171016115026.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3874177" class="layer">#11楼</a><a name="3874177" id="comment_anchor_3874177"></a>  <span class="comment_date">2017-12-26 13:11</span> <a id="a_comment_author_3874177" href="http://home.cnblogs.com/u/1306565/" target="_blank">chic_jia</a> <a href="http://msg.cnblogs.com/send/chic_jia" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3874177" class="blog_comment_body">写的很仔细！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3874177,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3874177,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3887636" class="layer">#12楼</a><a name="3887636" id="comment_anchor_3887636"></a>  <span class="comment_date">2018-01-12 14:21</span> <a id="a_comment_author_3887636" href="https://www.cnblogs.com/journeyIT/" target="_blank">journeyIT</a> <a href="http://msg.cnblogs.com/send/journeyIT" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3887636" class="blog_comment_body">很不错 赞👍</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3887636,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3887636,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3887636_avatar" style="display:none;">http://pic.cnblogs.com/face/967264/20190402132512.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3921535" class="layer">#13楼</a><a name="3921535" id="comment_anchor_3921535"></a>  <span class="comment_date">2018-03-13 12:23</span> <a id="a_comment_author_3921535" href="https://www.cnblogs.com/myis55555/" target="_blank">等待你陪伴你</a> <a href="http://msg.cnblogs.com/send/%E7%AD%89%E5%BE%85%E4%BD%A0%E9%99%AA%E4%BC%B4%E4%BD%A0" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3921535" class="blog_comment_body">数据库设计的时候难道不应该是概念模型，逻辑模型和物理模型吗？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3921535,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3921535,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3921535_avatar" style="display:none;">http://pic.cnblogs.com/face/1132937/20170411075809.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3927849" class="layer">#14楼</a><a name="3927849" id="comment_anchor_3927849"></a>  <span class="comment_date">2018-03-19 22:53</span> <a id="a_comment_author_3927849" href="http://home.cnblogs.com/u/454840/" target="_blank">lgd9</a> <a href="http://msg.cnblogs.com/send/lgd9" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3927849" class="blog_comment_body">非常感谢！！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3927849,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3927849,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3974009" class="layer">#15楼</a><a name="3974009" id="comment_anchor_3974009"></a>  <span class="comment_date">2018-05-14 16:54</span> <a id="a_comment_author_3974009" href="https://www.cnblogs.com/FuckJava/" target="_blank">FuckJava</a> <a href="http://msg.cnblogs.com/send/FuckJava" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3974009" class="blog_comment_body">谢谢</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3974009,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3974009,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3974009_avatar" style="display:none;">http://pic.cnblogs.com/face/1362533/20180409104721.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3976380" class="layer">#16楼</a><a name="3976380" id="comment_anchor_3976380"></a>  <span class="comment_date">2018-05-17 15:24</span> <a id="a_comment_author_3976380" href="https://www.cnblogs.com/gudeyeyu/" target="_blank">不点江山</a> <a href="http://msg.cnblogs.com/send/%E4%B8%8D%E7%82%B9%E6%B1%9F%E5%B1%B1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3976380" class="blog_comment_body">非常好</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3976380,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3976380,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#3996607" class="layer">#17楼</a><a name="3996607" id="comment_anchor_3996607"></a>  <span class="comment_date">2018-06-12 14:31</span> <a id="a_comment_author_3996607" href="https://www.cnblogs.com/acwm/" target="_blank">继续生活</a> <a href="http://msg.cnblogs.com/send/%E7%BB%A7%E7%BB%AD%E7%94%9F%E6%B4%BB" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3996607" class="blog_comment_body">j讲的挺好阿</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3996607,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3996607,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3996607_avatar" style="display:none;">http://pic.cnblogs.com/face/1195771/20170707145504.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4039080" class="layer">#18楼</a><a name="4039080" id="comment_anchor_4039080"></a>  <span class="comment_date">2018-08-09 13:42</span> <a id="a_comment_author_4039080" href="https://www.cnblogs.com/whatlonelytear/" target="_blank">苦涩泪滴</a> <a href="http://msg.cnblogs.com/send/%E8%8B%A6%E6%B6%A9%E6%B3%AA%E6%BB%B4" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4039080" class="blog_comment_body">顶你上天</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4039080,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4039080,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_4039080_avatar" style="display:none;">http://pic.cnblogs.com/face/756542/20190114135206.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4053524" class="layer">#19楼</a><a name="4053524" id="comment_anchor_4053524"></a>  <span class="comment_date">2018-08-29 17:09</span> <a id="a_comment_author_4053524" href="http://home.cnblogs.com/u/1005378/" target="_blank">爆发吧小球球</a> <a href="http://msg.cnblogs.com/send/%E7%88%86%E5%8F%91%E5%90%A7%E5%B0%8F%E7%90%83%E7%90%83" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4053524" class="blog_comment_body">学习了，刚开始了解这个，跟着做一遍感觉很清楚，谢谢</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4053524,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4053524,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4068824" class="layer">#20楼</a><a name="4068824" id="comment_anchor_4068824"></a>  <span class="comment_date">2018-09-17 10:34</span> <a id="a_comment_author_4068824" href="http://home.cnblogs.com/u/1266750/" target="_blank">长生叹</a> <a href="http://msg.cnblogs.com/send/%E9%95%BF%E7%94%9F%E5%8F%B9" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4068824" class="blog_comment_body">感谢，今天刚跟项目要求使用这个建表设计。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4068824,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4068824,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4069155" class="layer">#21楼</a><a name="4069155" id="comment_anchor_4069155"></a>  <span class="comment_date">2018-09-17 15:43</span> <a id="a_comment_author_4069155" href="http://home.cnblogs.com/u/1459655/" target="_blank">大漠烟客</a> <a href="http://msg.cnblogs.com/send/%E5%A4%A7%E6%BC%A0%E7%83%9F%E5%AE%A2" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4069155" class="blog_comment_body">学习了！谢谢楼主！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4069155,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4069155,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4077923" class="layer">#22楼</a><a name="4077923" id="comment_anchor_4077923"></a>  <span class="comment_date">2018-09-27 13:39</span> <a id="a_comment_author_4077923" href="https://www.cnblogs.com/zcr1829991218/" target="_blank">落叶~飘零</a> <a href="http://msg.cnblogs.com/send/%E8%90%BD%E5%8F%B6~%E9%A3%98%E9%9B%B6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4077923" class="blog_comment_body">什么沙雕软件，连个导入都没有，一张表上百个字段，老子要赋值半天，也不知道经理从哪找来的！！！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4077923,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4077923,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_4077923_avatar" style="display:none;">http://pic.cnblogs.com/face/1171715/20180824150151.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4107255" class="layer">#23楼</a><a name="4107255" id="comment_anchor_4107255"></a>  <span class="comment_date">2018-11-06 13:31</span> <a id="a_comment_author_4107255" href="https://www.cnblogs.com/Jiajun-Bie/" target="_blank">biejiajun</a> <a href="http://msg.cnblogs.com/send/biejiajun" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4107255" class="blog_comment_body">居然又碰到姓别的Coder2333</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4107255,&#39;Digg&#39;,this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4107255,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4161489" class="layer">#24楼</a><a name="4161489" id="comment_anchor_4161489"></a>  <span class="comment_date">2019-01-12 17:17</span> <a id="a_comment_author_4161489" href="https://www.cnblogs.com/stickcsharp/" target="_blank">iiiiiim</a> <a href="http://msg.cnblogs.com/send/iiiiiim" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4161489" class="blog_comment_body">mark</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4161489,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4161489,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4182902" class="layer">#25楼</a><a name="4182902" id="comment_anchor_4182902"></a>  <span class="comment_date">2019-02-19 11:33</span> <a id="a_comment_author_4182902" href="https://www.cnblogs.com/duanbaoke/" target="_blank">蜗牛段小宝</a> <a href="http://msg.cnblogs.com/send/%E8%9C%97%E7%89%9B%E6%AE%B5%E5%B0%8F%E5%AE%9D" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4182902" class="blog_comment_body">谢谢</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4182902,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4182902,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_4182902_avatar" style="display:none;">http://pic.cnblogs.com/face/1480795/20180917195946.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4213971" class="layer">#26楼</a><a name="4213971" id="comment_anchor_4213971"></a>  <span class="comment_date">2019-03-26 16:11</span> <a id="a_comment_author_4213971" href="https://www.cnblogs.com/xuqiang7/" target="_blank">YourMilkTea</a> <a href="http://msg.cnblogs.com/send/YourMilkTea" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4213971" class="blog_comment_body">一不小心会用了,哈哈</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4213971,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4213971,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_4213971_avatar" style="display:none;">http://pic.cnblogs.com/face/1527076/20181104184527.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4219584" class="layer">#27楼</a><a name="4219584" id="comment_anchor_4219584"></a>  <span class="comment_date">2019-04-01 15:06</span> <a id="a_comment_author_4219584" href="https://www.cnblogs.com/cxhfuujust/" target="_blank">cxhfuujust</a> <a href="http://msg.cnblogs.com/send/cxhfuujust" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4219584" class="blog_comment_body">牛鼻</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4219584,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4219584,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4220342" class="layer">#28楼</a><a name="4220342" id="comment_anchor_4220342"></a>  <span class="comment_date">2019-04-02 10:12</span> <a id="a_comment_author_4220342" href="http://home.cnblogs.com/u/1607349/" target="_blank">Reawell</a> <a href="http://msg.cnblogs.com/send/Reawell" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4220342" class="blog_comment_body">教程很实用，很详细</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4220342,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4220342,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/biehongli/p/6025954.html#4225654" class="layer">#29楼</a><a name="4225654" id="comment_anchor_4225654"></a><span id="comment-maxId" style="display:none;">4225654</span><span id="comment-maxDate" style="display:none;">2019/4/8 21:37:20</span>  <span class="comment_date">2019-04-08 21:37</span> <a id="a_comment_author_4225654" href="https://www.cnblogs.com/wangxue533/" target="_blank">罗生堂下</a> <a href="http://msg.cnblogs.com/send/%E7%BD%97%E7%94%9F%E5%A0%82%E4%B8%8B" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_4225654" class="blog_comment_body">楼主太棒了，先收藏为敬~</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4225654,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4225654,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_4225654_avatar" style="display:none;">http://pic.cnblogs.com/face/1630472/20190322010017.png</span>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/biehongli/p/6025954.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/biehongli/p/6025954.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万C++/C#源码: 大型实时仿真组态图形源码</a><br><a href="https://gitee.com/enterprises?from=bky-2" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-gitee&#39;)">【推荐】专业便捷的企业级代码托管服务 - Gitee 码云</a><br><a href="https://www.bagevent.com/event/2468856" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-GAITC&#39;)">【活动】2019第四届全球人工技术大会解码“智能+时代”</a><br></div>
+<div id="opt_under_post"></div>
+<script async="async" src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CPq2_4_2weECFYoqlgodwZQF5A"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/haiyoune2/p/9183907.html" target="_blank" onclick="clickRecomItmem(9183907)">PowerDesigner最基础的使用方法入门学习</a><br>·  <a href="https://www.cnblogs.com/shibashiaha/p/9183880.html" target="_blank" onclick="clickRecomItmem(9183880)">PowerDesigner最基础的使用方法入门学习</a><br>·  <a href="https://www.cnblogs.com/thinkquan/archive/2011/11/05/2237265.html" target="_blank" onclick="clickRecomItmem(2237265)">PowerDesigner15.1入门学习（一）</a><br>·  <a href="https://www.cnblogs.com/rainbowaae/p/9183994.html" target="_blank" onclick="clickRecomItmem(9183994)">PowerDesigner最基础的使用方法入门学习</a><br>·  <a href="https://www.cnblogs.com/meijiemu/p/9183432.html" target="_blank" onclick="clickRecomItmem(9183432)">PowerDesigner最基础的使用方法入门学习</a><br></div></div>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CPu2_4_2weECFYoqlgodwZQF5A"><div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="2" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/saved_resource(1).html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/623480/" target="_blank">老板眼中的996</a><br> ·  <a href="https://news.cnblogs.com/n/623479/" target="_blank">Serverless增长趋于疲软</a><br> ·  <a href="https://news.cnblogs.com/n/623478/" target="_blank">小米去年赚134亿雷军年薪百亿 获发B股作薪酬</a><br> ·  <a href="https://news.cnblogs.com/n/623473/" target="_blank">谷歌云服务新任CEO：将大力招聘销售人员 赶超亚马逊</a><br> ·  <a href="https://news.cnblogs.com/n/623470/" target="_blank">我们一天应该喝多少水？8乘8法则并无太多科学依据</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><style type="text/css">
+h5{color:#9900FF;}
+#git{
+ line-height: 1.5;
+ margin-top: 5px;
+ text-align: left;
+}
+
+</style>
+
+
+
+<marquee scrolldelay="250">
+  <h5>键盘不敲烂，月薪不过万</h5>
+</marquee>
+
+<!--人形时钟-->
+<!--
+<div height="120"
+width="150" align="center"><embed
+height="80" width="205" 
+type="application/x-shockwave-flash"
+pluginspage="http://www.macromedia.com/go/getflashplayer"
+src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.swf"
+quality="high" autostart="1" 
+wmode="transparent">
+</div>
+-->
+
+
+<!--小白鼠-->
+<!--
+<object type="application/x-shockwave-flash" title="小白饿了，请大哥大姐施舍点吧。。。" style="outline: none;" data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="205" height="190">
+        <param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
+        <param name="AllowScriptAccess" value="always">
+        <param name="wmode" value="opaque">
+</object>
+-->
+<!--
+<object type="application/x-shockwave-flash"
+style="outline:none;"
+data="http://cdn.abowman.com/widgets/hamster/hamster.swf?"
+width="240" height="180"
+id="__wow_video_player__463292481"
+title="Adobe Flash Player">
+<param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
+<param name="AllowScriptAccess" value="always">
+<param name="wmode" value="opaque">
+</object>
+-->
+
+
+<div id="git">
+Github :<a href="https://github.com/MRbie" target="_blank"><u style="color:#FF0000">MRbie</u></a>
+ <br>
+CSDN  :<a href="http://blog.csdn.net/biexiansheng" target="_blank"><u style="color:#FF0000">Biexiansheng</u></a>
+ <br>
+
+ <!--导航添加功能-->
+ <div>小金库：
+  <a id="blog_nav_sitehome" class="listitem" target="_blank" href="http://www.cnblogs.com/biehongli/p/5737681.html">
+  <u style="color:#FF0000">小金库</u>
+ </a>
+</div>
+
+<!--
+<div>个人公众号：推荐师
+ <img src="https://images.cnblogs.com/cnblogs_com/biehongli/983046/o_tuijianshi.jpg" width="200" height="200" alt="推荐师公众号" title="推荐师公众号">
+</div>
+-->
+
+  企鹅 :1748741328<br>
+
+<!--
+<span style="font-size:13px;color:#9900ff;">免费提供源码，有偿提供服务。</span>
+-->
+
+
+ <div>
+ <span style="font-size:13px;">Java入门交流群一:415232060(已满，勿加)</span><br>
+<span style="font-size:13px;">Java中级交流群二:738193808</span><br>
+ <span style="font-size:13px;">大数据交流群:549591078</span>
+
+
+<!-- 
+<span style="font-size:9px;"><br/>
+<del> (由于近期陆陆续续有通过博客加我的，所以弄了一个Java入门级交流群，不定期分享一些实战的视频和文档，大家互相交流，学习，一起提升。加油！！！)</del>
+</span>
+-->
+
+ 
+ </div>
+</div>
+
+
+
+<div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/biehongli/">别先生</a><br>园龄：<a href="https://home.cnblogs.com/u/biehongli/" title="入园时间：2016-08-01">2年8个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/biehongli/followers/">692</a><br>关注：<a href="https://home.cnblogs.com/u/biehongli/followees/">39</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;04cc825a-0058-e611-9fc1-ac853d9f53cc&#39;)">+加关注</a></div><script>getFollowStatus('04cc825a-0058-e611-9fc1-ac853d9f53cc')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/03/01&#39;);return false;">&lt;</a></td><td align="center">2019年4月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/05/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center"><a href="https://www.cnblogs.com/biehongli/archive/2019/04/02.html"><u>2</u></a></td><td align="center">3</td><td align="center"><a href="https://www.cnblogs.com/biehongli/archive/2019/04/04.html"><u>4</u></a></td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center">8</td><td class="CalTodayDay" align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalWeekendDay" align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td></tr><tr><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td><td class="CalOtherMonthDay" align="center">11</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+
+</div>
+</div>
+
+</div><div id="sidebar_recentposts" class="sidebar-block">
+<div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/biehongli/p/10654983.html">1. ERROR Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10648841.html">2. ajax导致Echarts不显示饼图数据、柱状图数据只显示气泡的问题。</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10644976.html">3. BootstrapTable的列排序怎么搞</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10612864.html">4. displaytag如何实现获取到每行的id字段的值。</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10583121.html">5. 下拉框、下拉控件之Select2。自动补全的使用</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10578411.html">6. bootstrap-typeahead 自动补全简单的使用教程</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10572884.html">7. BootstrapTable，选中某几行，获取其数据并进行后台处理。以及其他的属性使用。</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10560298.html">8. 日期时间选择器、Bootstrap日期和时间表单组件。bootstrap-datetimepicker实现年月日，时分秒的选择。</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10559942.html">9. mysql的if用法解决同一张数据表里面两个字段是否相等统计数据量。</a></li><li><a href="https://www.cnblogs.com/biehongli/p/10534694.html">10. sql 语句中count()有条件的时候为什么要加上or null</a></li>
+</ul>
+</div>
+</div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(491)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/biehongli/category/893646.html">Ajax(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/biehongli/category/1131045.html">Azkaban(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/biehongli/category/890036.html">Bootstrap(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/biehongli/category/963417.html">C3p0(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/biehongli/category/869550.html">CSS+HTML实战练习(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/biehongli/category/862044.html">CSS3(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/biehongli/category/986163.html">EasyUI(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="https://www.cnblogs.com/biehongli/category/1130425.html">Flume(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="https://www.cnblogs.com/biehongli/category/1030820.html">Git(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="https://www.cnblogs.com/biehongli/category/1032330.html">Gradle(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="https://www.cnblogs.com/biehongli/category/1233959.html">Greenplum(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="https://www.cnblogs.com/biehongli/category/1095310.html">HA(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="https://www.cnblogs.com/biehongli/category/1019595.html">Hadoop(25)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="https://www.cnblogs.com/biehongli/category/1079827.html">Hbase(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="https://www.cnblogs.com/biehongli/category/1097292.html">Hdfs(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="https://www.cnblogs.com/biehongli/category/877845.html">Hibemate(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="https://www.cnblogs.com/biehongli/category/1079828.html">Hive(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="https://www.cnblogs.com/biehongli/category/862043.html">HTML5(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="https://www.cnblogs.com/biehongli/category/862042.html">Java(43)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="https://www.cnblogs.com/biehongli/category/862050.html">Javascript(22)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="https://www.cnblogs.com/biehongli/category/877839.html">JavaWeb(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="https://www.cnblogs.com/biehongli/category/871840.html">Java攻城狮面试考题(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_22" href="https://www.cnblogs.com/biehongli/category/877836.html">JDBC(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_23" href="https://www.cnblogs.com/biehongli/category/877835.html">JQuery(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_24" href="https://www.cnblogs.com/biehongli/category/958413.html">Json(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_25" href="https://www.cnblogs.com/biehongli/category/893644.html">JSP(22)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_26" href="https://www.cnblogs.com/biehongli/category/958412.html">Jxl(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_27" href="https://www.cnblogs.com/biehongli/category/1107249.html">KafKa(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_28" href="https://www.cnblogs.com/biehongli/category/1113498.html">Keepalived(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_29" href="https://www.cnblogs.com/biehongli/category/1333802.html">Kettle(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_30" href="https://www.cnblogs.com/biehongli/category/962180.html">Linux(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_31" href="https://www.cnblogs.com/biehongli/category/1079824.html">MapReduce(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_32" href="https://www.cnblogs.com/biehongli/category/877841.html">Maven(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_33" href="https://www.cnblogs.com/biehongli/category/1021895.html">MongoDB(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_34" href="https://www.cnblogs.com/biehongli/category/984403.html">MyBatis(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_35" href="https://www.cnblogs.com/biehongli/category/862051.html">Mysql(39)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_36" href="https://www.cnblogs.com/biehongli/category/1113422.html">Nginx(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_37" href="https://www.cnblogs.com/biehongli/category/1035762.html">OA系统(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_38" href="https://www.cnblogs.com/biehongli/category/1199024.html">Oozie(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_39" href="https://www.cnblogs.com/biehongli/category/862052.html">Oracle(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_40" href="https://www.cnblogs.com/biehongli/category/1075382.html">Poi(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_41" href="https://www.cnblogs.com/biehongli/category/1315301.html">Postgresql(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_42" href="https://www.cnblogs.com/biehongli/category/1341298.html">Postman(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_43" href="https://www.cnblogs.com/biehongli/category/904104.html">PowerDesigner(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_44" href="https://www.cnblogs.com/biehongli/category/1221695.html">Python(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_45" href="https://www.cnblogs.com/biehongli/category/1315570.html">Rabbitmq(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_46" href="https://www.cnblogs.com/biehongli/category/1234850.html">Redis(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_47" href="https://www.cnblogs.com/biehongli/category/1133670.html">Scala(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_48" href="https://www.cnblogs.com/biehongli/category/894429.html">Servlet(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_49" href="https://www.cnblogs.com/biehongli/category/1233960.html">Solr</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_50" href="https://www.cnblogs.com/biehongli/category/1079830.html">Spark(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_51" href="https://www.cnblogs.com/biehongli/category/877840.html">Spring(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_52" href="https://www.cnblogs.com/biehongli/category/1369669.html">SpringBoot(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_53" href="https://www.cnblogs.com/biehongli/category/980770.html">SpringMVC(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_54" href="https://www.cnblogs.com/biehongli/category/905005.html">SQLyog(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_55" href="https://www.cnblogs.com/biehongli/category/1131390.html">Sqoop(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_56" href="https://www.cnblogs.com/biehongli/category/907675.html">StartUML(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_57" href="https://www.cnblogs.com/biehongli/category/1079829.html">Storm(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_58" href="https://www.cnblogs.com/biehongli/category/877842.html">Struts2(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_59" href="https://www.cnblogs.com/biehongli/category/962179.html">VMware(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_60" href="https://www.cnblogs.com/biehongli/category/865445.html">XML(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_61" href="https://www.cnblogs.com/biehongli/category/1147565.html">Zeromq(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_62" href="https://www.cnblogs.com/biehongli/category/1094111.html">Zookeeper(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_63" href="https://www.cnblogs.com/biehongli/category/1016799.html">错误集锦(78)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_64" href="https://www.cnblogs.com/biehongli/category/862048.html">大数据or大数据项目(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_65" href="https://www.cnblogs.com/biehongli/category/1050459.html">工作经历or心得(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_66" href="https://www.cnblogs.com/biehongli/category/959527.html">设计模式</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_67" href="https://www.cnblogs.com/biehongli/category/863069.html">生活杂谈or面试(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_68" href="https://www.cnblogs.com/biehongli/category/862049.html">云计算(1)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(317)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/biehongli/archive/2019/04.html">2019年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/biehongli/archive/2019/03.html">2019年3月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/biehongli/archive/2019/02.html">2019年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/biehongli/archive/2019/01.html">2019年1月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/biehongli/archive/2018/12.html">2018年12月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/biehongli/archive/2018/11.html">2018年11月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/biehongli/archive/2018/10.html">2018年10月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/biehongli/archive/2018/09.html">2018年9月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/biehongli/archive/2018/08.html">2018年8月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/biehongli/archive/2018/07.html">2018年7月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="https://www.cnblogs.com/biehongli/archive/2018/06.html">2018年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="https://www.cnblogs.com/biehongli/archive/2018/05.html">2018年5月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="https://www.cnblogs.com/biehongli/archive/2018/04.html">2018年4月 (19)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="https://www.cnblogs.com/biehongli/archive/2018/03.html">2018年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="https://www.cnblogs.com/biehongli/archive/2018/02.html">2018年2月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="https://www.cnblogs.com/biehongli/archive/2018/01.html">2018年1月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="https://www.cnblogs.com/biehongli/archive/2017/12.html">2017年12月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="https://www.cnblogs.com/biehongli/archive/2017/11.html">2017年11月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="https://www.cnblogs.com/biehongli/archive/2017/10.html">2017年10月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="https://www.cnblogs.com/biehongli/archive/2017/09.html">2017年9月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="https://www.cnblogs.com/biehongli/archive/2017/08.html">2017年8月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="https://www.cnblogs.com/biehongli/archive/2017/07.html">2017年7月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="https://www.cnblogs.com/biehongli/archive/2017/06.html">2017年6月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="https://www.cnblogs.com/biehongli/archive/2017/05.html">2017年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="https://www.cnblogs.com/biehongli/archive/2017/04.html">2017年4月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="https://www.cnblogs.com/biehongli/archive/2017/03.html">2017年3月 (33)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="https://www.cnblogs.com/biehongli/archive/2017/02.html">2017年2月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="https://www.cnblogs.com/biehongli/archive/2017/01.html">2017年1月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="https://www.cnblogs.com/biehongli/archive/2016/11.html">2016年11月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="https://www.cnblogs.com/biehongli/archive/2016/10.html">2016年10月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="https://www.cnblogs.com/biehongli/archive/2016/09.html">2016年9月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="https://www.cnblogs.com/biehongli/archive/2016/08.html">2016年8月 (31)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_links863087" class="catList sidebar-block">
+<h3 class="catListTitle">分享IT学习资源</h3>
+
+</div>
+
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	415105
+	</li>
+	<li class="liRank">
+		排名 -	480
+	</li>
+</ul>
+</div>
+
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/6025954.html#4225654">1. Re:PowerDesigner最基础的使用方法入门学习</a></li>
+        <li class="recent_comment_body">楼主太棒了，先收藏为敬~</li>
+        <li class="recent_comment_author">--罗生堂下</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/5989290.html#4224829">2. Re:java中集合类中Collection接口中的List接口的常用方法熟悉</a></li>
+        <li class="recent_comment_body">学习了，感谢楼主</li>
+        <li class="recent_comment_author">--IQQcode</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/6025954.html#4220342">3. Re:PowerDesigner最基础的使用方法入门学习</a></li>
+        <li class="recent_comment_body">教程很实用，很详细</li>
+        <li class="recent_comment_author">--Reawell</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/6025954.html#4219584">4. Re:PowerDesigner最基础的使用方法入门学习</a></li>
+        <li class="recent_comment_body">牛鼻</li>
+        <li class="recent_comment_author">--cxhfuujust</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/6025954.html#4213971">5. Re:PowerDesigner最基础的使用方法入门学习</a></li>
+        <li class="recent_comment_body">一不小心会用了,哈哈</li>
+        <li class="recent_comment_author">--YourMilkTea</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/8214992.html#4213366">6. Re:Intellij Idea中Backspace无法使用，Ctrl+c/Ctrl+d等等快捷键无法使用的问题的解决</a></li>
+        <li class="recent_comment_body">太棒了！！！！！！！</li>
+        <li class="recent_comment_author">--Fantasy泽</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/8214992.html#4202347">7. Re:Intellij Idea中Backspace无法使用，Ctrl+c/Ctrl+d等等快捷键无法使用的问题的解决</a></li>
+        <li class="recent_comment_body">楼主，真是太感谢你了。一直用myeclipse，第一次用idea，解决了我的常用快捷键困扰。。。搜了好多贴，都没解决问题。我的keyMap风格已经换成eclipse了，可ctrl+c还是不起作用。原来......</li>
+        <li class="recent_comment_author">--小鱼不喝水</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/6424406.html#4194308">8. Re:jsp+servlet实现最基本的注册登陆功能</a></li>
+        <li class="recent_comment_body">为什么我报404错</li>
+        <li class="recent_comment_author">--苏弘扬</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/6479440.html#4193319">9. Re:分页查询的实现原理</a></li>
+        <li class="recent_comment_body">你这雪花怎么弄的哟，好炫酷，新人。。。</li>
+        <li class="recent_comment_author">--太过幸福的猫</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/biehongli/p/8074642.html#4192218">10. Re:实验手册——搜狗搜索日志分析系统</a></li>
+        <li class="recent_comment_body">@忆华灯纵博搜狗实验室官网上有，可以下载的...</li>
+        <li class="recent_comment_author">--马永东</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/biehongli/p/6025954.html">1. PowerDesigner最基础的使用方法入门学习(243959)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/5754555.html">2. JAVA学习路线图(120841)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/6074713.html">3. Java中IO流，输入输出流概述与总结(82440)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/6443701.html">4. Map集合遍历的四种方式理解和简单使用(48983)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/5957949.html">5. Servlet开发技术，创建，以及Servlet的配置，web.xml的配置(38687)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/biehongli/p/6831510.html">1. 一个忙着找实习工作的大三在校生的真实感受！！！(102)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/5754555.html">2. JAVA学习路线图(34)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/6639631.html">3. 大数据云计算学习路线图(纯属个人看法和观点)(34)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/6025954.html">4. PowerDesigner最基础的使用方法入门学习(29)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/9159905.html">5. 北上或者南下之被摆了一道(10)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/biehongli/p/6025954.html">1. PowerDesigner最基础的使用方法入门学习(55)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/5754555.html">2. JAVA学习路线图(53)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/6074713.html">3. Java中IO流，输入输出流概述与总结(14)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/6831510.html">4. 一个忙着找实习工作的大三在校生的真实感受！！！(13)</a></li><li><a href="https://www.cnblogs.com/biehongli/p/6639631.html">5. 大数据云计算学习路线图(纯属个人看法和观点)(9)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2019 别先生
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<!--返回顶部,需要开通js权限-->
+<a href="javascript:;" id="btn" title="reTop"></a>
+<script type="text/javascript" src="./PowerDesigner最基础的使用方法入门学习 - 别先生 - 博客园_files/index_top.js"></script>
+
+
+
+
+<!--下雪-->
+
+<script>
+(function($){$.fn.snow=function(options){var $flake=$('<div id="flake" />').css({'position':'absolute','top':'-50px'}).html('&#10052;'),documentHeight=$(document).height(),documentWidth=$(document).width(),defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#F7F7F7"},options=$.extend({},defaults,options);var interval=setInterval(function(){var startPositionLeft=Math.random()*documentWidth-100,startOpacity=0.5+Math.random(),sizeFlake=options.minSize+Math.random()*options.maxSize,endPositionTop=documentHeight-40,endPositionLeft=startPositionLeft-100+Math.random()*200,durationFall=documentHeight*10+Math.random()*5000;$flake.clone().appendTo('body').css({left:startPositionLeft,opacity:startOpacity,'font-size':sizeFlake,color:options.flakeColor}).animate({top:endPositionTop,left:endPositionLeft,opacity:0.2},durationFall,'linear',function(){$(this).remove()});},options.newOn);};})(jQuery);
+$.fn.snow({ minSize: 25, maxSize: 60, newOn: 1000, flakeColor: '#F7F7F7' });
+</script>
+<!--PageEndHtml Block End-->
+
+
+<div id="flake" style="position: absolute; top: 23700.9px; left: 1727.28px; opacity: 0.263166; font-size: 73.7112px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 23582.6px; left: 247.317px; opacity: 0.235244; font-size: 73.7548px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 23509.5px; left: 1247px; opacity: 0.25725; font-size: 42.9142px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 23060.3px; left: 553.214px; opacity: 0.26991; font-size: 48.6334px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22965.5px; left: 666.655px; opacity: 0.285983; font-size: 84.4501px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 23082.3px; left: 59.6007px; opacity: 0.282359; font-size: 81.8856px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22956.7px; left: 100.623px; opacity: 0.270459; font-size: 64.1801px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22886.5px; left: 35.014px; opacity: 0.288433; font-size: 84.871px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22607.5px; left: 1576.21px; opacity: 0.269627; font-size: 28.7784px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22421.3px; left: 710.668px; opacity: 0.254747; font-size: 70.6808px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22653.9px; left: 247.916px; opacity: 0.295647; font-size: 77.9649px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22349.9px; left: 1777.32px; opacity: 0.30508; font-size: 44.6352px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22242.5px; left: 1485.66px; opacity: 0.308411; font-size: 68.76px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22293.5px; left: 551.732px; opacity: 0.306828; font-size: 77.8104px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 22043.6px; left: 717.762px; opacity: 0.249019; font-size: 49.7814px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21765.6px; left: 671.65px; opacity: 0.323206; font-size: 34.7539px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21863.3px; left: 272.514px; opacity: 0.320174; font-size: 76.7729px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21923.6px; left: 932.722px; opacity: 0.318306; font-size: 81.312px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21728.7px; left: 1690.49px; opacity: 0.32435; font-size: 42.2904px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21483.5px; left: 1438.55px; opacity: 0.331958; font-size: 58.1218px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21261.5px; left: 1519.64px; opacity: 0.338845; font-size: 64.4428px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21148.3px; left: 797.504px; opacity: 0.314844; font-size: 70.9558px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21392.5px; left: 380.889px; opacity: 0.295664; font-size: 45.845px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21161.5px; left: 741.443px; opacity: 0.341947; font-size: 60.1504px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21057.1px; left: -68.8894px; opacity: 0.308668; font-size: 79.8018px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20949.7px; left: 184.31px; opacity: 0.348519; font-size: 35.2792px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 21031.1px; left: 1323.26px; opacity: 0.291223; font-size: 31.0979px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20940.6px; left: 380.786px; opacity: 0.26895; font-size: 32.4643px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20799.6px; left: 919.091px; opacity: 0.333509; font-size: 35.0327px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20546.2px; left: 834.739px; opacity: 0.361037; font-size: 77.3314px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20502.1px; left: 1552.57px; opacity: 0.359927; font-size: 62.2432px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20476.9px; left: -27.3056px; opacity: 0.299861; font-size: 43.8045px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20470.3px; left: -65.3825px; opacity: 0.36339; font-size: 27.7364px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20370.4px; left: 1322.04px; opacity: 0.36649; font-size: 82.482px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20083px; left: 1737.7px; opacity: 0.33539; font-size: 51.2459px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 20218px; left: 890.007px; opacity: 0.358201; font-size: 31.9458px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19890.4px; left: 1670.78px; opacity: 0.316338; font-size: 57.4314px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19648.6px; left: 380.975px; opacity: 0.388881; font-size: 83.061px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19624.1px; left: 1214.94px; opacity: 0.389642; font-size: 40.4736px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19554.8px; left: 696.655px; opacity: 0.27361; font-size: 67.7065px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19618.6px; left: 814.53px; opacity: 0.361685; font-size: 82.4772px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19336.6px; left: 1613.16px; opacity: 0.398562; font-size: 42.3217px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19327.3px; left: 733.096px; opacity: 0.317839; font-size: 33.9474px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19194.4px; left: 1102.5px; opacity: 0.396646; font-size: 75.0082px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19050.1px; left: 593.841px; opacity: 0.407449; font-size: 56.1117px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 19035.6px; left: 259.455px; opacity: 0.4079; font-size: 53.1687px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18850.9px; left: 1156.18px; opacity: 0.28297; font-size: 39.6871px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18721.6px; left: 1550.23px; opacity: 0.417642; font-size: 47.4695px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18533.4px; left: 680.818px; opacity: 0.42348; font-size: 45.0468px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18693.6px; left: 685.153px; opacity: 0.378631; font-size: 41.6062px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18476.5px; left: 1549.79px; opacity: 0.301824; font-size: 30.4237px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18409.1px; left: 191.513px; opacity: 0.373607; font-size: 38.6244px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18436.8px; left: 1296.33px; opacity: 0.426477; font-size: 61.9063px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18252.3px; left: 89.2698px; opacity: 0.381384; font-size: 78.1902px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18242px; left: 1712.16px; opacity: 0.432519; font-size: 28.8325px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 18092.4px; left: 1445.67px; opacity: 0.437162; font-size: 52.5743px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17724.7px; left: 1648.61px; opacity: 0.448567; font-size: 26.6977px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17873.9px; left: 1411.69px; opacity: 0.44394; font-size: 31.5492px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17562.1px; left: 1247.13px; opacity: 0.421955; font-size: 50.9271px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17539.7px; left: 1161.64px; opacity: 0.454309; font-size: 51.3444px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17463.5px; left: 282.008px; opacity: 0.456671; font-size: 42.7006px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17378px; left: 1069.37px; opacity: 0.459323; font-size: 42.3203px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17206.3px; left: 1076.28px; opacity: 0.408145; font-size: 50.8485px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17048.8px; left: 772.647px; opacity: 0.339756; font-size: 56.811px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17149.1px; left: 1328.01px; opacity: 0.320017; font-size: 83.4763px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16861.4px; left: 1685.5px; opacity: 0.47535; font-size: 35.1222px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 17004.7px; left: 1685.18px; opacity: 0.316213; font-size: 52.6765px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16955px; left: 905.237px; opacity: 0.399414; font-size: 32.2366px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16775.3px; left: 1668.17px; opacity: 0.478021; font-size: 62.0426px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16591.8px; left: 1379.92px; opacity: 0.424911; font-size: 72.6733px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16587.3px; left: 598.06px; opacity: 0.483855; font-size: 83.5137px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16349.7px; left: 200.277px; opacity: 0.491226; font-size: 74.246px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16381.3px; left: 315.317px; opacity: 0.456268; font-size: 67.5653px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16316px; left: 627.531px; opacity: 0.313096; font-size: 31.8168px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16087.6px; left: 127.993px; opacity: 0.405183; font-size: 54.4684px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 16043.4px; left: 1235.12px; opacity: 0.494532; font-size: 82.0549px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15929.1px; left: -81.5998px; opacity: 0.459697; font-size: 75.0406px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15809.8px; left: 1474.52px; opacity: 0.507975; font-size: 77.6031px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15604.5px; left: 723.033px; opacity: 0.475625; font-size: 29.0119px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15623.2px; left: 1403.71px; opacity: 0.513765; font-size: 51.8981px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15548.3px; left: 468.404px; opacity: 0.516087; font-size: 82.0577px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15273.4px; left: 1119.16px; opacity: 0.524617; font-size: 72.4154px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15368.3px; left: 1609.23px; opacity: 0.521674; font-size: 47.3363px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15341.6px; left: 1543.43px; opacity: 0.381225; font-size: 84.4777px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15199.3px; left: 202.171px; opacity: 0.526914; font-size: 47.947px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 15077px; left: 88.4918px; opacity: 0.53071; font-size: 68.7206px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14842.8px; left: 972.362px; opacity: 0.533451; font-size: 71.3363px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14933px; left: 1115.33px; opacity: 0.535176; font-size: 54.0306px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14585.5px; left: 1416.65px; opacity: 0.436473; font-size: 32.9405px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14699.3px; left: 1101.12px; opacity: 0.452845; font-size: 52.002px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14429.5px; left: 71.4109px; opacity: 0.352171; font-size: 27.3696px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14422.9px; left: 1537.13px; opacity: 0.551; font-size: 72.136px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14345.8px; left: 99.6475px; opacity: 0.417923; font-size: 50.1369px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14176.5px; left: 1544.11px; opacity: 0.558645; font-size: 74.7602px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14120.1px; left: 500.839px; opacity: 0.426553; font-size: 77.9969px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 14045.5px; left: 1658.37px; opacity: 0.562711; font-size: 57.1555px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13856.6px; left: 204.818px; opacity: 0.509315; font-size: 84.7869px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13724.2px; left: 1138.94px; opacity: 0.515238; font-size: 66.3954px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13815.1px; left: 1757.69px; opacity: 0.569856; font-size: 39.8561px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13679px; left: 868.549px; opacity: 0.574079; font-size: 76.8525px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13579.8px; left: 719.252px; opacity: 0.44785; font-size: 55.8088px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13387.8px; left: -46.0652px; opacity: 0.478822; font-size: 71.0019px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13376.8px; left: 646.431px; opacity: 0.524653; font-size: 75.4639px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13151.3px; left: 212.549px; opacity: 0.373318; font-size: 73.3155px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13244.8px; left: 288.317px; opacity: 0.58755; font-size: 65.1292px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12971.9px; left: 898.917px; opacity: 0.596018; font-size: 45.2072px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 13043.1px; left: 232.303px; opacity: 0.593807; font-size: 50.1228px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12755px; left: 1484.15px; opacity: 0.602746; font-size: 60.9179px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12758.1px; left: 497.967px; opacity: 0.602649; font-size: 51.8484px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12713.1px; left: 166.187px; opacity: 0.462932; font-size: 57.574px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12459.2px; left: -66.4796px; opacity: 0.611923; font-size: 69.9129px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12451.1px; left: 769.494px; opacity: 0.612173; font-size: 65.2706px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12443.1px; left: 1129.63px; opacity: 0.612422; font-size: 40.1842px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12300.9px; left: 291.434px; opacity: 0.529113; font-size: 30.7424px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12118.4px; left: 617.484px; opacity: 0.517772; font-size: 73.6149px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11994px; left: 1715.05px; opacity: 0.572706; font-size: 62.0863px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 12042.1px; left: 510.829px; opacity: 0.624862; font-size: 54.8963px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11920.8px; left: 785.338px; opacity: 0.628626; font-size: 58.5615px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11728.5px; left: 702.192px; opacity: 0.634592; font-size: 65.1598px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11583.5px; left: 228.493px; opacity: 0.63909; font-size: 70.5346px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11538.7px; left: 1194.83px; opacity: 0.640478; font-size: 43.7695px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11338.2px; left: 1124.92px; opacity: 0.646698; font-size: 57.2623px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11440.1px; left: 1462.16px; opacity: 0.448885; font-size: 38.4395px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11335.1px; left: 1321.51px; opacity: 0.455743; font-size: 62.1723px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 11048.4px; left: 1416.93px; opacity: 0.65569; font-size: 29.4875px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10964.8px; left: 740.293px; opacity: 0.658285; font-size: 65.27px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10859.5px; left: 160.453px; opacity: 0.513803; font-size: 34.4341px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10914px; left: 813.868px; opacity: 0.373281; font-size: 70.5934px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10756.4px; left: 80.4533px; opacity: 0.593695; font-size: 29.7828px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10552.7px; left: 860.962px; opacity: 0.67107; font-size: 57.8697px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10627px; left: 1668.13px; opacity: 0.414282; font-size: 66.1628px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10436px; left: 148.745px; opacity: 0.434908; font-size: 73.4243px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10406.9px; left: 1359.36px; opacity: 0.518954; font-size: 41.505px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10220px; left: 16.4523px; opacity: 0.68139; font-size: 45.0966px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10178.3px; left: 1675.3px; opacity: 0.410664; font-size: 75.1669px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9984.7px; left: 1668.84px; opacity: 0.68869; font-size: 31.1659px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 10023px; left: 1532.18px; opacity: 0.687501; font-size: 73.6891px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9835.75px; left: 660.338px; opacity: 0.693311; font-size: 79.6957px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9698.48px; left: 1182.59px; opacity: 0.44526; font-size: 57.0819px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9567.91px; left: 303.002px; opacity: 0.691104; font-size: 53.1554px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9650.22px; left: 1122.52px; opacity: 0.699066; font-size: 52.9226px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9487.96px; left: -9.10146px; opacity: 0.402011; font-size: 45.7409px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9427.13px; left: 658.6px; opacity: 0.600941; font-size: 36.8088px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9213.96px; left: 1495.06px; opacity: 0.486409; font-size: 69.4284px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9128.14px; left: 1282.26px; opacity: 0.715263; font-size: 37.2421px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 9055.15px; left: 1439.9px; opacity: 0.717527; font-size: 53.8064px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8942.3px; left: 15.3247px; opacity: 0.56374; font-size: 79.1674px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8784.06px; left: 544.248px; opacity: 0.458634; font-size: 79.2381px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8840.47px; left: 799.557px; opacity: 0.434523; font-size: 76.5241px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8694.35px; left: 648.197px; opacity: 0.728721; font-size: 54.25px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8525.43px; left: 1389.36px; opacity: 0.733961; font-size: 83.3746px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8437.77px; left: 378.889px; opacity: 0.736681; font-size: 46.7082px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8340.1px; left: 560.794px; opacity: 0.576831; font-size: 75.4191px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8215.88px; left: 630.578px; opacity: 0.454315; font-size: 82.6378px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8192.61px; left: 482.849px; opacity: 0.477681; font-size: 43.5397px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8036.66px; left: -52.0893px; opacity: 0.626998; font-size: 35.6267px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 8031.26px; left: 21.4227px; opacity: 0.669985; font-size: 38.0017px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7807.11px; left: 1090.81px; opacity: 0.756246; font-size: 68.6185px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7816.27px; left: 658.149px; opacity: 0.755962; font-size: 29.6379px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7715.31px; left: 334.678px; opacity: 0.469949; font-size: 82.2908px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7577.65px; left: 442.931px; opacity: 0.689239; font-size: 35.8304px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7520.68px; left: 1073.37px; opacity: 0.765132; font-size: 43.238px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7318.45px; left: 300.409px; opacity: 0.416567; font-size: 60.6291px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7222.36px; left: 966.956px; opacity: 0.584139; font-size: 26.5732px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7155.75px; left: 1684.12px; opacity: 0.776453; font-size: 80.4647px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7062.98px; left: 922.961px; opacity: 0.779331; font-size: 74.7581px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 7039.45px; left: 274.095px; opacity: 0.7268; font-size: 41.0771px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6838.64px; left: 7.64766px; opacity: 0.676382; font-size: 36.9944px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6804.44px; left: 1258.28px; opacity: 0.643874; font-size: 73.0709px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6641.43px; left: 1024.53px; opacity: 0.792409; font-size: 36.312px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6575.88px; left: 34.0398px; opacity: 0.489206; font-size: 33.4098px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6471.52px; left: 540.207px; opacity: 0.708942; font-size: 25.7383px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6415.73px; left: 1362.71px; opacity: 0.704986; font-size: 77.26px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6289.21px; left: 1239.28px; opacity: 0.658365; font-size: 83.705px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6183.03px; left: 1503.29px; opacity: 0.80663; font-size: 41.7734px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6083.77px; left: 946.456px; opacity: 0.80971; font-size: 44.4232px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 6021.51px; left: -54.0949px; opacity: 0.718243; font-size: 63.8767px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5928.71px; left: 751.532px; opacity: 0.620854; font-size: 52.1806px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5783.98px; left: 435.629px; opacity: 0.81901; font-size: 71.6361px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5646.89px; left: -55.5143px; opacity: 0.823263; font-size: 27.3478px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5622.92px; left: 1661.64px; opacity: 0.824007; font-size: 51.1979px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5533.37px; left: 1494.05px; opacity: 0.501918; font-size: 73.9853px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5429.13px; left: 1574.17px; opacity: 0.59393; font-size: 56.0254px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5331.36px; left: 1737.47px; opacity: 0.562746; font-size: 45.2894px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5242.24px; left: 0.649425px; opacity: 0.487251; font-size: 78.4777px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 5110.02px; left: 1299.11px; opacity: 0.520423; font-size: 61.2382px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4978.55px; left: 613.464px; opacity: 0.843997; font-size: 80.693px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4905.15px; left: 532.841px; opacity: 0.846274; font-size: 82.7154px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4768.25px; left: 454.458px; opacity: 0.850522; font-size: 75.2848px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4674.59px; left: 314.439px; opacity: 0.853427; font-size: 74.7284px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4609.1px; left: 9.85701px; opacity: 0.855459; font-size: 66.4173px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4519.21px; left: 975.213px; opacity: 0.806197; font-size: 81.7256px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4444.64px; left: 707.722px; opacity: 0.860561; font-size: 40.1313px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4329.29px; left: 505.364px; opacity: 0.86414; font-size: 41.631px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4204.56px; left: 498.571px; opacity: 0.868009; font-size: 63.46px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 4085.23px; left: 196.539px; opacity: 0.871711; font-size: 68.695px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3996.21px; left: 1596.01px; opacity: 0.874473; font-size: 71.1391px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3917.53px; left: 1017.39px; opacity: 0.578012; font-size: 45.8834px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3780.67px; left: 538.491px; opacity: 0.88116; font-size: 67.229px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3731.9px; left: 27.9153px; opacity: 0.882673; font-size: 41.2236px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3581.31px; left: 1373.5px; opacity: 0.846751; font-size: 77.3856px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3546.52px; left: 1134.05px; opacity: 0.888424; font-size: 65.8132px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3395.92px; left: -4.4191px; opacity: 0.559946; font-size: 54.6804px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3323.3px; left: 404.207px; opacity: 0.895349; font-size: 74.9461px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3190.6px; left: -16.9767px; opacity: 0.487214; font-size: 46.0525px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3111.62px; left: 190.927px; opacity: 0.505786; font-size: 35.8223px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 3034.38px; left: 738.223px; opacity: 0.904312; font-size: 37.8277px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2934.43px; left: 1411.66px; opacity: 0.907413; font-size: 81.7114px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2821.51px; left: 1763.25px; opacity: 0.910916; font-size: 69.155px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2712.07px; left: 770.736px; opacity: 0.683297; font-size: 36.1968px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2645.63px; left: -66.5092px; opacity: 0.744344; font-size: 35.7876px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2508.27px; left: 185.467px; opacity: 0.735721; font-size: 41.2849px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2416.62px; left: 1490.8px; opacity: 0.854156; font-size: 83.9751px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2345.18px; left: 479.158px; opacity: 0.925693; font-size: 41.4367px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2209.85px; left: 866.968px; opacity: 0.929892; font-size: 74.0608px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2112.85px; left: 1671.42px; opacity: 0.932901; font-size: 32.4297px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 2040.15px; left: 1761.47px; opacity: 0.505755; font-size: 40.7874px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1926.34px; left: 885.222px; opacity: 0.737304; font-size: 84.8944px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1824.58px; left: 83.5753px; opacity: 0.585681; font-size: 46.8737px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1739.77px; left: 284.617px; opacity: 0.944475; font-size: 52.0208px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1622.59px; left: 1114.64px; opacity: 0.545457; font-size: 38.8639px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1538.82px; left: 1380.71px; opacity: 0.702265; font-size: 62.6789px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1448.39px; left: 721.617px; opacity: 0.953515; font-size: 29.4515px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1394.8px; left: 1388.17px; opacity: 0.487505; font-size: 80.5201px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1301.22px; left: 1505.34px; opacity: 0.958081; font-size: 62.728px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1190.82px; left: 1539.41px; opacity: 0.561959; font-size: 74.1891px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 1094.15px; left: 296.642px; opacity: 0.950684; font-size: 82.6336px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 990.432px; left: 1337.73px; opacity: 0.832188; font-size: 57.1903px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 906.382px; left: 498.369px; opacity: 0.807413; font-size: 71.522px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 800.728px; left: 1105.58px; opacity: 0.973608; font-size: 51.1159px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 700.841px; left: -75.044px; opacity: 0.804884; font-size: 55.9363px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 600.278px; left: 496.598px; opacity: 0.648825; font-size: 53.1985px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 509.038px; left: -0.322927px; opacity: 0.753139; font-size: 32.031px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 408.78px; left: 1358.56px; opacity: 0.985767; font-size: 58.7742px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 303.066px; left: 351.25px; opacity: 0.645015; font-size: 69.6231px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 206.126px; left: 119.253px; opacity: 0.621785; font-size: 77.3546px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: 109.92px; left: 287.174px; opacity: 0.650782; font-size: 68.6587px; color: rgb(247, 247, 247);">❄</div><div id="flake" style="position: absolute; top: -50px; left: 357.905px; opacity: 0.927198; font-size: 30.3468px; color: rgb(247, 247, 247);">❄</div></body></html>

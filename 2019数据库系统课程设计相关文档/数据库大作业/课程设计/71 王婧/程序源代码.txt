@@ -1,0 +1,155 @@
+package changtu;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.sql.*;
+import java.io.*; .
+public class denglu extends JFrame implements ActionListener
+{
+      static JLabel jl=new JL abel("欢迎登陆汽车管理系统");
+      static JLabel jl2=new JLabel();
+      static JLabel jl3=new JLabel("姓名");
+      static JLabel jl4=new JIabel("密码");
+      static JButton jb1=new JButton("确定");
+      static JButton jb2=new JButton("返回");
+      static JTextField jtl =new JTextField();
+      static JTextField jt2=new JTextField();
+      static Opration op=new Opration();
+      Statement st;
+      public void DI(Statement sta)
+      {
+            this.st=sta;
+            setSize(300,250);
+            setVisible(true);
+            setLayout(null);
+            jl.setBounds(80,20,200,20);
+            jl3.setBounds(60,60,50,20);
+            jl4.setBounds(60,100,50,20);
+            jl2.setBounds(100,140,200,20);
+            jbl.setBounds(80,180,60,30);
+            jb2.setBounds( 160,180,60,30);
+            jt1.setBounds( 100,60,100,20);
+            jt2.setBounds( 100,100,100,20);
+           add(jl);
+           add(jl2);
+           add(jl3);
+           add(jl4);
+           add(jt1); 
+           add(jt2);
+           add(jb1);
+           add(jb2);
+           jb1 .addActionListener(this);
+           jb2.addActionListener(this);
+      } 
+      public static void main(String args[])
+      {
+            try{
+                     Class.forName( "sun.jdbc.odbc.JdbcOdbcDriver");
+            }
+            catch(Exception e){
+                     System.out.printIn("连接失败!");
+                     return;
+             }
+            try{
+                      Connection  con=DriverManager.getConnection("jdbc:odbc:changtu","sa", " ");
+                      Statement stmt=con.createStaterment();
+                      new denglu().Dl(stmt);
+                 }
+             catch(Exception e){
+                       Systerm.out.println(e);
+                 }
+      }
+      public void actionPerformed(ActionEvent e)
+      {
+             Object s=e.getSource();
+             ResultSet rs;
+             if(s.equals(jb1))
+   {
+
+      try{
+
+      rs=st.excuteQuery("select xingmin,mima from manager");
+
+      while(rs.next())
+
+      String a=rs.getString("xingmin");String b=rs.getString( "mima");
+
+      if(a.equals(jt1.getText)&&b.equals(jt2.getText))
+
+      disposeO;
+
+      op.oprationO;}
+
+      jl2.setText("姓名或密码错误!");jl2.setForeground(Color.red);}
+
+      catch(Exception e1){
+
+      System.out.println(e);
+
+      }
+
+if(s.equals(jb2){
+
+      System.exit(0);}}}
+
+package changtu;import java.awt.*;
+
+import javax.swing.*;import java.awt.event.*;
+
+public class Opration extends JFrame implements ActionListener
+
+      static JLabel jl=new JLabel("请选择一种操作: )//定义标签
+
+      static JRadioButton jc 1=new JRadioButton("查询操作:;/单选按钮static JRadioButton jc2=new JRadioButton("插入操作");static JRadioButton jc3=new JRadioButton("删除操作");static JRadioButton jc4=new JRadioButton("修改操作");static JButton jb1=new JButn("确定://按钮static JButton jb2=new JButon("返回");static ButtonGroup bg=new ButtonGroup(;public static int flag;
+
+      static Check ch=new CheckO;public void xuanze()
+
+      setTtl("操作选择://设置界面内容setSize(300,270)://界 面大小setL ayou(lull)/:/界面布局
+
+      jl.setBounds(70,10,150,20)://设置 位置大小jcl.setBounds(60,50,150,20);jc2.setBounds(60,90,150,20);jc3.setBounds(60,130,150,20);jc4.setBounds(60,170, 150,20);jbl.setBounds(80,210,60,20);jb2.setBounds(160,210,60,20);jel.selSeleted(rue);//设 为选中bg addjcl);bgaddjc2); .bgadd(jc3);bgaddjc4);addGi);addjcI);add(jc2);addjc3);addjc4);
+
+      add(jbl);addjb2);
+
+      jcl.addcionListetrthis//加入事件监听jc2.addActionListener(this);jc3.addActionListener(this);jc4.addActionListener(this);jb1.addActionL istener(this);jb2.addActionL istener(this);setVisible(rue);
+
+      public int getStateO{
+
+      returm flag;
+
+      public static void opration(){
+
+      new Opration().xuanze();
+
+      public void actionPerformed(ActionEvent e)
+
+      Object s=e.getSource://事件源if(s.cqualsjb1))
+
+      if(jcl.isSelectedO){
+
+      flag=l;
+
+      setVisible(false); .ch.ch0;
+
+      else f(c2.isSelected){
+
+      flag=2;
+
+      setVisible(false);
+
+      ch.ch();
+
+      else ifjc3.isSelectedO){
+
+      flag=3;
+
+      setVisible(false);ch.ch);
+
+      else fjc.isSelected0){
+
+      setVisible(false);ch.ch0;
+
+      if(s.equals(jb2))
+
+      System.ext(0);
+}}}
+    

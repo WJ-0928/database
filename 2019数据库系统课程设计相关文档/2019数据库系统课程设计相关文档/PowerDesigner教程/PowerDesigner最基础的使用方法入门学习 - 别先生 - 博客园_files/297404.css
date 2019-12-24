@@ -1,0 +1,92 @@
+body{background:#CCCC33;}
+
+#Header1_HeaderTitle{
+ //margin-left:100px;
+ font-size:36px;
+}
+
+#navList{
+ border:1px solid gray;
+ //height:60px;
+ //padding-top:10px;
+ background:#CCCC33;
+}
+
+#navList a:hover{
+ text-decoration:underline;
+}
+.menu{
+ color:black !important;
+ //padding-right:50px;
+ 
+}
+
+
+tbCommentBody{
+ background:#CCCC33;
+ width:950px;
+ background:url(//images.cnblogs.com/cnblogs_com/biehongli/983046/o_duolaA2.jpg);
+ background-position:right;
+ background-color:#CCCC33;
+}
+
+
+
+btn_comment_submit{
+ width:900px;
+ height:50px;
+ background-color:#CCCC33;
+}
+
+green_channel{
+ width:1000px;
+ background:#CCCC33;
+}
+
+
+
+#btn{
+    width: 40px;
+    height: 40px;
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
+    margin-left: 610px;
+    background:url("//images.cnblogs.com/cnblogs_com/biehongli/983046/o_o_top_bg.png" ) no-repeat left top;
+}
+#btn:hover{
+    background:url("//images.cnblogs.com/cnblogs_com/biehongli/983046/o_o_top_bg.png" ) no-repeat left -40px;
+}
+
+.post{
+ background-color:#CCCC33;
+}
+.commentbox_main .comment_textarea{
+width:1018px;
+background-color:#CCCC33;
+font-size:30px;
+}
+.commentbox_title .commentbox_title_right{
+float:left;
+}
+
+#github的导航
+.git-link{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 0;
+    height: 149px;
+    width: 149px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    background-image: url(//images2015.cnblogs.com/blog/459873/201603/459873-20160317090540131-1089895320.png);
+}
+
+
+#小白鼠
